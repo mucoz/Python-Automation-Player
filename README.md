@@ -1,3 +1,5 @@
+![explorer_B5T1LAnKWt](https://user-images.githubusercontent.com/72700035/227303770-6cf33c99-b914-4a33-88d5-6214419d2066.gif)
+
 # Automation Framework for desktop automation
 
 # 1-Create automation modules inside "autos" folder
