@@ -62,7 +62,7 @@ class NewWindow():
             Globals.playing_status = PlayStatus.STARTED
             self.button_start["text"] = "Pause"
             self.button_stop["state"] = "enabled"
-            self.window.geometry("317x135")
+            self.window.geometry("284x120")
             check_globals_thread = Thread(target=self.check_globals)
             check_globals_thread.setDaemon(True)
             check_globals_thread.start()
