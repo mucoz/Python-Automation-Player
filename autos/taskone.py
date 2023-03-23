@@ -14,7 +14,7 @@ class TaskOne:
         try:
             for i in range(Globals.progressbar_length):
                 Globals.progressbar_status = i + 1
-                Globals.label_status = "Processing " + str(i)
+                Globals.label_status = "Processing module #1 task #" + str(i+1) + "..."
                 print("task_one_" + str(i+1) + " has been executed.")
                 time.sleep(1)
         except Exception:
