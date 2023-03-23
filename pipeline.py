@@ -24,7 +24,7 @@ class SetTrace(object):
 def monitor(frame, event, arg):
     if event == "line":
         Globals.check_progress()
-        if Globals.check_progress() == PlayStatus.STOPPED:
+        if Globals.playing_status == PlayStatus.STOPPED:
             raise Sentinel
 
     return monitor
