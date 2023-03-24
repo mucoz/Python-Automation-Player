@@ -19,6 +19,12 @@ class Globals:
     playing_status = ""
 
     @staticmethod
+    def update_status(message):
+        Globals.label_status = message
+        Globals.progressbar_status += 1
+        logger.Logger.info(message)
+
+    @staticmethod
     def check_progress():
         if Globals.playing_status == PlayStatus.PAUSED:
             Globals.label_status = "Current task has been paused."
