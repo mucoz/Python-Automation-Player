@@ -1,5 +1,6 @@
 import time
 from globals import Globals
+from logger import Logger as log
 
 
 class TaskOne:
@@ -14,7 +15,8 @@ class TaskOne:
         try:
             for i in range(Globals.progressbar_length):
                 Globals.update_status("Processing module #1 task #" + str(i+1) + "...")
-                print("task_one_" + str(i+1) + " has been executed.")
+                log.info("task_one_" + str(i+1) + " has been executed.")
                 time.sleep(1)
+
         except Exception:
             Globals.throw_exception("Error occurred while working on task one.")

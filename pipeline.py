@@ -1,6 +1,6 @@
-from autos.taskone import TaskOne
-from autos.tasktwo import TaskTwo
+from autos import taskone, tasktwo
 from globals import Globals, PlayStatus
+from importlib import reload
 import sys
 
 
@@ -35,7 +35,7 @@ class Pipeline:
     @staticmethod
     def start():
         # write the automation modules inside this list
-        task_list = [TaskOne, TaskTwo]
+        task_list = [taskone.TaskOne, tasktwo.TaskTwo]
 
         for task in task_list:
             next_task = task()

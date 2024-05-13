@@ -1,6 +1,8 @@
 from enum import Enum
 import logger
 import utils
+import traceback
+
 
 class PlayStatus(Enum):
     NOT_STARTED = 0,
@@ -41,8 +43,13 @@ class Globals:
     @staticmethod
     def throw_exception(text):
         if Globals.playing_status != PlayStatus.STOPPED:
+            error_stack = traceback.format_exc().splitlines()
+            last_error_message = ""
+            for error in error_stack:
+                last_error_message = error
+                logger.Logger.error(last_error_message)
             logger.Logger.error(text)
-            utils.show_message("Error", text, 48)
+            utils.show_message("Error", text + "\n" + last_error_message, 48)
             Globals.playing_status = PlayStatus.STOPPED
         return
 
